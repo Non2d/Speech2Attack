@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/addons/p5.sound.min.js"></script>
+    <!-- Includes the p5.collide2D addon library -->
+    <script defer src="https://unpkg.com/p5.collide2d"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Monoton&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main></main>
+    <title>p5.js Multi-file Example</title>
+    <script src="entities/player.js"></script>
+    <script src="entities/enemy.js"></script>
+    <script src="utils/keyCode.js"></script>
+    <script src="utils/button.js"></script>
+    <script src="weapon/bullet.js"></script>
+    <script src="scenes/mainMenu.js"></script>
+    <script src="scenes/inGame.js"></script>
+    <script src="sceneManager.js"></script>
+    <script src="collide.js"></script>
+    <!-- 衝突判定関数を読み込む -->
+    <script src="sketch.js"></script>
+  </body>
+</html>
