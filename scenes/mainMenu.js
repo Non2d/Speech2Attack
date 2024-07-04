@@ -22,6 +22,7 @@ function initMainMenu() {
       fullscreen(!fs);
     },
   }); //buttonListに追加してforで回すほうが賢そう
+  mySpeechRecognition = new MySpeechRecognition();
 }
 
 function mainMenu() {
@@ -30,4 +31,5 @@ function mainMenu() {
   b2InGame.handleClick();
   bToggleFs.display();
   bToggleFs.handleClick();
+  mySpeechRecognition.display();
 }
