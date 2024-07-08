@@ -1,9 +1,10 @@
 class Bullet{
-  constructor({x,y,angle,speed}){
+  constructor({x,y,angle,speed, typePower}){
     this.x = x;
     this.y = y;
     this.vel = createVector(speed * Math.cos(angle), speed*Math.sin(angle));
-    this.hasHit = false;
+    this.typePower = typePower; //与ダメージの属性係数は発射時に確定
+    this.isActive = true;
   }
   calcPos(){
     this.x += this.vel.x;

@@ -3,7 +3,7 @@ let enemies = [];
 
 function initInGame() {
   b2mainMenu = new Button({
-    x: 100,
+    x: 20,
     y: 20,
     w: 300,
     h: 70,
@@ -11,28 +11,25 @@ function initInGame() {
     label: "Back to Menu",
     onClick: () => {
       currentScene = "mainMenu";
-      enemies = []; //初期化処理はもうちょっとちゃんと体系系的にまとめたい
+      enemies = []; //初期化処理はもうちょっとちゃんと体系的にまとめたい
     },
   });
-  bToggleFs = new Button({
-    x: 20,
-    y: 20,
-    w: 60,
-    h: 70,
-    sizeOfText: 40,
-    label: "fs",
-    onClick: () => {
-      let fs = fullscreen();
-      fullscreen(!fs);
-    },
-  }); //buttonListに追加してforで回すほうが賢そう
   p = new Player({ initPos: createVector(1920 / 2, 1080 / 2) });
-  enemies.push(new Enemy({ initPos: createVector(400, 500), player:p }));
-  enemies.push(new Enemy({ initPos: createVector(200, 300), player:p }));
+  enemies.push(new Enemy({ initPos: createVector(400, 500), player:p, type:"fire" }));
+  enemies.push(new Enemy({ initPos: createVector(200, 300), player:p, type:"ice" }));
+  enemies.push(new Enemy({ initPos: createVector(100, 470), player:p, type:"volt"}));
+
+  mySpeechRecognition = new MySpeechRecognition(p);
 }
 
 function inGame() {
   background(240, 240, 255);
+
+  //フルスクリーン
+  if (keyIsDown(keyCodeDict.f) && !previousFIsDown){
+    fullscreen(!fullscreen());
+  }
+  previousFIsDown = keyIsDown(keyCodeDict.f);
   
   for (let e of enemies){
     e.calcIsAlive();
@@ -41,6 +38,11 @@ function inGame() {
     e.display();
   }
   
+  mySpeechRecognition.toggleAsr({key:"e"});
+  mySpeechRecognition.display();
+  mySpeechRecognition.displayTypePower();
+
+  p.setTypePower(mySpeechRecognition.typePower);
   p.calcAngle();
   p.calcMove();
   p.calcAim(100);
@@ -49,9 +51,7 @@ function inGame() {
 
   b2mainMenu.handleClick();
   b2mainMenu.display();
-
-  bToggleFs.handleClick();
-  bToggleFs.display();
+  
 }
 
 let ingame_coolDownCount = 0;

@@ -1,13 +1,11 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from collections import Counter
 from pydantic import BaseModel
-import re
-import os
 from dotenv import load_dotenv
 load_dotenv()
 
-from groq import Groq
+from openai import AsyncOpenAI
+client = AsyncOpenAI()
 
 app = FastAPI()
 
@@ -19,11 +17,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-client = Groq(
-    api_key=os.environ.get("GROQ_API_KEY"),
-)
-
 class TextRequest(BaseModel):
     text: str
 
@@ -31,23 +24,17 @@ class TextRequest(BaseModel):
 async def root():
     return {"message": "FastAPI is running :)"}
 
-@app.post("/groq")
+@app.post("/gpt")
 async def generate_text(request: TextRequest):
-    response = client.chat.completions.create(
+    response = await client.chat.completions.create(
+        model="gpt-4o",
         messages=[
-            {
-            "role": "user",
-                "content": f"Please score the strength of the ultimate ability named {request.text} out of 100 in battle game. Do not return anything other than the score.",
-                # "content":f"Explain about the ultimate ability named {request.text} in the shooting game. Note that they do not exist in real."
-            }
+            {"role": "user", "content": f"Please return the list of scores of the fire power, ice power, and thunder power of the ultimate ability named {request.text} between 0 and 20 in battle game. The average score is 7. 15 or higher scores are very rare. The format is [fire power, ice power, thunder power]. Do not return anything other than the score list."}
         ],
-        model="llama3-8b-8192",
     )
-    # response_text = chat_completion.choices[0].message.content
-    # word_counts = Counter(re.findall(r'\b\w+\b', response_text))
-    # filtered_word_counts = {word: count for word, count in word_counts.items() if count > 3}
-    # return {"response": response_text, "word_counts": dict(word_counts)}
-    return {"response": response.choices[0].message.content}
+    return {
+        "response": response.choices[0].message.content
+    }
 
 
 if __name__ == "__main__":

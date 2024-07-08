@@ -1,35 +1,29 @@
 function initMainMenu() {
   b2InGame = new Button({
-    x: 100,
+    x: 20,
     y: 20,
     w: 300,
     h: 70,
     sizeOfText: 40,
-    label: "Back to Menu",
+    label: "Play Game",
     onClick: () => {
       currentScene = "inGame";
     },
   });
-  bToggleFs = new Button({
-    x: 20,
-    y: 20,
-    w: 60,
-    h: 70,
-    sizeOfText: 40,
-    label: "fs",
-    onClick: () => {
-      let fs = fullscreen();
-      fullscreen(!fs);
-    },
-  }); //buttonListに追加してforで回すほうが賢そう
   mySpeechRecognition = new MySpeechRecognition();
 }
 
+let previousFIsDown = false;
 function mainMenu() {
   background("#bbb");
+
+  //フルスクリーン
+  if (keyIsDown(keyCodeDict.f) && !previousFIsDown){
+    fullscreen(!fullscreen());
+  }
+  previousFIsDown = keyIsDown(keyCodeDict.f);
+  
+
   b2InGame.display();
   b2InGame.handleClick();
-  bToggleFs.display();
-  bToggleFs.handleClick();
-  mySpeechRecognition.display();
 }

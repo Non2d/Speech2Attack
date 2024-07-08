@@ -4,7 +4,7 @@ function setup() {
   createCanvas(1920, 1080);
 }
 
-currentScene = "mainMenu";
+currentScene = "inGame";
 
 function draw() {
   sceneManager(currentScene);
