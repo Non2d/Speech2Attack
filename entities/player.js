@@ -37,6 +37,7 @@ class Player {
   }
   calcBullet() {
     //銃弾追加
+    print(this.buff);
     if (mouseIsPressed && this.shootCoolDownCount == 0) {
       let bullet;
       switch (this.buff) {

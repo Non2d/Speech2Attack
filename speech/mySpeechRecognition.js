@@ -86,16 +86,6 @@ class MySpeechRecognition {
                         this.finalTranscript = "";
                         this.interimTranscript = "";
                     }, 10000);
-
-                    setTimeout(() => {
-                        if(this.typePower.fire>15){
-                            this.player.buff = "fire";
-                        } else if(this.typePower.ice>15){
-                            this.player.buff = "ice";
-                        } else if (this.typePower.volt>15){
-                            this.player.buff = "volt";
-                        }
-                    }, 20000);
                 }
             }
         } else {
@@ -187,6 +177,16 @@ class MySpeechRecognition {
     }
 
     displayTypePower() {
+        //マジで緊急措置
+        if(this.typePower.fire>10){
+            this.player.buff = "fire";
+        } else if(this.typePower.ice>10){
+            this.player.buff = "ice";
+        } else if (this.typePower.volt>10){
+            this.player.buff = "volt";
+        } else {
+            this.player.buff = "";
+        }
         //fire type power
         noStroke(0);
         fill(0);

@@ -5,6 +5,8 @@ class Button {
     w,
     h,
     sizeOfText = 16,
+    bgColor = color(200),
+    txtColor = color(0),
     label = "Button",
     gauge = 1,
     onClick = () => { },
@@ -15,6 +17,8 @@ class Button {
     this.w = w;
     this.h = h;
     this.sizeOfText = sizeOfText;
+    this.bgcolor = bgColor;
+    this.txtColor = txtColor;
     this.label = label;
     this.gauge = gauge; // うーん，やっぱりインスタンス内で共有することを考えたらdisplayCircleGauge関数に仮引数で取るよりこっちでもっといた方がいいんだろうな
     this.onClick = onClick; //コールバック関数を保存
@@ -56,12 +60,10 @@ class Button {
   }
 
   display() {
-    stroke(0);
-    strokeWeight(1);
-    fill(255);
+    noStroke();
+    fill(this.bgcolor);
     rect(this.x, this.y, this.w, this.h);
-    fill(0);
-    strokeWeight(0);
+    fill(this.txtColor);
     textSize(this.sizeOfText);
     textAlign(CENTER, CENTER);
     text(this.label, this.x + this.w / 2, this.y + this.h / 2);

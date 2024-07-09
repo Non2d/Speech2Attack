@@ -26,7 +26,7 @@ class Enemy {
         let b = this.player.bullets[i];
         if (!this.inactiveBulletIdList.includes(i) && dist(b.x, b.y, this.pos.x, this.pos.y) <= this.radius) {
           // 基礎ダメージ
-          let damage = 0.1;
+          let damage = 1.0;
           // 属性による付加ダメージ
           console.log(b.typePower);
           if (this.type == "fire") {
@@ -36,19 +36,19 @@ class Enemy {
           } else if (this.type == "volt") {
             damage += b.typePower["ice"] / 10;
           } else {
-            damage += 0.9;
+            damage += 0.2;
           }
           this.hp -= damage;
           this.inactiveBulletIdList.push(i);
           this.player.eventPoint++;
 
-          if(this.player.buff=="ice"){
-            this.speed = 0.5;
-            //3秒後に戻す
-            setTimeout(() => {
-              this.speed = 2;
-            }, 10000);
-          } 
+          // if(this.player.buff=="ice"){
+          //   this.speed = 0.5;
+          //   //3秒後に戻す
+          //   setTimeout(() => {
+          //     this.speed = 2;
+          //   }, 10000);
+          // } 
         }
       }      
     }
