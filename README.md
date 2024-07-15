@@ -28,7 +28,7 @@ OpenAI API(gpt-4oモデル)を使用する場合(有料)
 - cd backend -> python main.py
 
 Groq API(llama3-70b-8192モデル)を使用する場合(無料)
-- https://console.groq.com/playground こちらでGroq API Keyを取得してください。
+- https://console.groq.com/playground こちらからGroq API Keyを取得してください。
 - backend/.env.exampleのファイル名を.envに変更し、GROQ_API_KEYを追加してください。
 - cd backend -> python main-groq.py
 
