@@ -2,8 +2,7 @@
 
 ## プレイ動画
 
-[![Speech2Attack_Youtube_Link](https://github.com/user-attachments/assets/e4699f2c-7628-4858-90f8-f7374e3d1d7d)](https://www.youtube.com/watch?v=D6ZarGYNLLs)
-
+[![Speech2Attack_Youtube_Link](https://github.com/user-attachments/assets/aba67035-d31b-45bd-a0ce-38e25165d16f)](https://www.youtube.com/watch?v=D6ZarGYNLLs)
 
 ## 概要
 
