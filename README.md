@@ -22,8 +22,15 @@
 ## 起動方法
 
 - git clone
-- backend/.env.exampleにOPENAI_API_KEYを追加してください。
+
+OpenAI API(gpt-4oモデル)を使用する場合(有料)
+- backend/.env.exampleのファイル名を.envに変更し、OPENAI_API_KEYを追加してください。
 - cd backend -> python main.py
+
+Groq API(llama3-70b-8192モデル)を使用する場合(無料)
+- backend/.env.exampleのファイル名を.envに変更し、GROQ_API_KEYを追加してください。
+- cd backend -> python main-groq.py
+
 - (VSCodeを使用している場合) index.htmlをLive Serverで開いて下さい
 
 
