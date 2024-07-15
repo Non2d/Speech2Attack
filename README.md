@@ -2,7 +2,7 @@
 
 ## プレイ動画
 
-- [YouTube プレイ動画]([https://youtu.be/G-0TokT1WeM](https://www.youtube.com/watch?v=D6ZarGYNLLs))
+- [YouTube プレイ動画](https://youtu.be/G-0TokT1WeM](https://www.youtube.com/watch?v=D6ZarGYNLLs)
 
 ## 概要
 
