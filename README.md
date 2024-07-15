@@ -1,10 +1,5 @@
 # Speech2Attack
 
-## 動作環境
-
-- **対応ブラウザ**: Web Speech APIの動作する環境。現時点ではChromeのみ対応しています。
-- **注意事項**: お手元のブラウザでプレイするためには、OpenAI API Keyを環境変数に設定して頂く必要があります。
-
 ## プレイ動画
 
 - [YouTube プレイ動画]([https://youtu.be/G-0TokT1WeM](https://www.youtube.com/watch?v=D6ZarGYNLLs))
@@ -18,5 +13,18 @@
 - **マウス**: エイム
 - **W, A, S, Dキー**: 上下左右へ移動
 - **左クリック(長押し可)**: 射撃
+
+## 動作環境
+
+- **対応ブラウザ**: Web Speech APIの動作する環境。現時点ではChromeのみ対応しています。
+- **注意事項**: お手元のブラウザでプレイするためには、OpenAI API Keyを環境変数に設定して頂く必要があります。
+
+## 起動方法
+
+- git clone
+- 
+- cd backend -> python main.py
+- (VSCodeを使用している場合) index.htmlをLive Serverで開いて下さい
+
 
 ## 是非プレイしてください！
