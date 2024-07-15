@@ -81,7 +81,7 @@ async def generate_text(request: TextRequest):
         "strength": response.choices[0].message.content,
         "fire": response2.choices[0].message.content,
         "ice": response3.choices[0].message.content,
-        "thunder": response4.choices[0].message.content
+        "volt": response4.choices[0].message.content
     }
 
 
