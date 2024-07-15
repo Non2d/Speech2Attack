@@ -1,2 +1,22 @@
-YouTube動画リンク
-https://www.youtube.com/watch?v=D6ZarGYNLLs
+# Speech2Attack
+
+## 動作環境
+
+- **対応ブラウザ**: Web Speech APIの動作する環境。現時点ではChromeのみ対応しています。
+- **注意事項**: お手元のブラウザでプレイするためには、OpenAI API Keyを環境変数に設定して頂く必要があります。
+
+## プレイ動画
+
+- [YouTube プレイ動画]([https://youtu.be/G-0TokT1WeM](https://www.youtube.com/watch?v=D6ZarGYNLLs))
+
+## 概要
+
+自由なプロンプトで強化した武器を使って、3種類の属性をもつ敵をなぎ倒そう！強力なプロンプトを唱えることが攻略の鍵となります。
+
+## 操作方法
+
+- **マウス**: エイム
+- **W, A, S, Dキー**: 上下左右へ移動
+- **左クリック(長押し可)**: 射撃
+
+## 是非プレイしてください！
