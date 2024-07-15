@@ -17,7 +17,7 @@
 ## 動作環境
 
 - **対応ブラウザ**: Web Speech APIの動作する環境。現時点ではChromeのみ対応しています。
-- **注意事項**: お手元のブラウザでプレイするためには、OpenAI API Keyを環境変数に設定して頂く必要があります。
+- **注意事項**: お手元のブラウザでプレイするためには、OpenAI API KeyまたはGroq API Keyを環境変数に設定していただく必要があります。
 
 ## 起動方法
 
@@ -28,10 +28,15 @@ OpenAI API(gpt-4oモデル)を使用する場合(有料)
 - cd backend -> python main.py
 
 Groq API(llama3-70b-8192モデル)を使用する場合(無料)
+- https://console.groq.com/playground こちらでGroq API Keyを取得してください。
 - backend/.env.exampleのファイル名を.envに変更し、GROQ_API_KEYを追加してください。
 - cd backend -> python main-groq.py
 
 - (VSCodeを使用している場合) index.htmlをLive Serverで開いて下さい
 
+## 技術
+- フロントエンド:p5.js
+- バックエンド:FastAPI, OpenAI API, Groq API
+- 音声認識:Web Speech API
 
 ## 是非プレイしてください！
