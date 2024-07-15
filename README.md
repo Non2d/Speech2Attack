@@ -22,7 +22,7 @@
 ## 起動方法
 
 - git clone
-- 
+- backend/.env.exampleにOPENAI_API_KEYを追加してください。
 - cd backend -> python main.py
 - (VSCodeを使用している場合) index.htmlをLive Serverで開いて下さい
 
