@@ -31,7 +31,7 @@ class TextRequest(BaseModel):
 async def root():
     return {"message": "FastAPI is running :)"}
 
-@app.post("/groq")
+@app.post("/gpt")
 async def generate_text(request: TextRequest):
     response = client.chat.completions.create(
         messages=[
